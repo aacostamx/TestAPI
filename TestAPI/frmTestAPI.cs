@@ -35,8 +35,6 @@ namespace TestAPI
                     }
                 }
 
-                file.ProviderFile = ProviderFileVO.Sabre;
-
                 var Url = txtApiUrl.Text;
                 var Action = txtActionApi.Text;
                 var restClient = new RestClient(Url);
