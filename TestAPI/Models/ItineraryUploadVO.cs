@@ -11,44 +11,41 @@ namespace TestAPI.Models
         /// </summary>
         public ItineraryUploadVO()
         {
-            lines = new List<string>();
             StartDate = new DateTime();
             EndDate = new DateTime();
-            AirlineCodeCombobox = string.Empty;
-            readFile = false;
-            email = false;
+            itineraries = new List<ItineraryFile>();
+            readServerFile = false;
+            email = true;
+            errors = new List<string>();
+            sucess = false;
+            inputDates = true;
         }
-
-        /// <summary>
-        /// Gets or sets the lines.
-        /// </summary>
-        /// <value>
-        /// The lines.
-        /// </value>
-        public List<string> lines { get; set; }
 
         /// <summary>
         /// Start Date
         /// </summary>
-        public DateTime StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
 
         /// <summary>
         /// End Date
         /// </summary>
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
         /// <summary>
-        /// AirlineCodeCombobox
-        /// </summary>
-        public string AirlineCodeCombobox { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether [read file from server].
+        /// Gets or sets the itineraries.
         /// </summary>
         /// <value>
-        ///   <c>true</c> if [read file from server]; otherwise, <c>false</c>.
+        /// The itineraries.
         /// </value>
-        public bool readFile { get; set; }
+        public List<ItineraryFile> itineraries { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [read server file].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [read server file]; otherwise, <c>false</c>.
+        /// </value>
+        public bool readServerFile { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether [send mail].
@@ -57,5 +54,29 @@ namespace TestAPI.Models
         ///   <c>true</c> if [send mail]; otherwise, <c>false</c>.
         /// </value>
         public bool email { get; set; }
+
+        /// <summary>
+        /// Gets or sets the errors.
+        /// </summary>
+        /// <value>
+        /// The errors.
+        /// </value>
+        public List<string> errors { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="ItineraryUploadAPI"/> is sucess.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if sucess; otherwise, <c>false</c>.
+        /// </value>
+        public bool sucess { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [input dates].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [input dates]; otherwise, <c>false</c>.
+        /// </value>
+        public bool inputDates { get; set; }
     }
 }
